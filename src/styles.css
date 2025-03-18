@@ -1,0 +1,240 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh; /* Full height for the container */
+}
+
+/* Sidebar Container */
+.sidebar-container {
+  position: relative;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 180px; /* Sidebar width */
+  background: #333;
+  color: white;
+  padding: 20px;
+  height: 100%;
+  position: fixed; /* Fixed position for better control */
+  z-index: 1000; /* Ensure it's above other elements */
+  transition: left 0.3s ease;
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 200px; /* Adjusted margin to create space for sidebar */
+  padding: 20px; /* Padding inside the main content */
+  flex: 1; /* Allow it to grow and fill available space */
+  overflow-y: auto;
+}
+
+/* Hide the sidebar by default on mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    left: -180px; /* Hide off-screen */
+    height: 100vh;
+  }
+
+  /* When the sidebar is open, slide it in */
+  .sidebar.open {
+    left: 0; /* Show when open */
+  }
+
+  .main-content {
+    margin-left: 0; /* Reset margin for mobile */
+    padding: 10px; /* Adjust padding for mobile */
+    width: 100%; /* Full width on mobile */
+  }
+}
+
+/* Sidebar image and list styles */
+.sidebar img {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  color: #1e90ff;
+}
+
+/* Hamburger Button Styles */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  background: #333;
+  color: white;
+  position: absolute; /* Position it at the top */
+  top: 10px; /* Adjust position */
+  left: 10px; /* Adjust position */
+  z-index: 1001; /* Ensure it is above the sidebar */
+}
+
+/* Show the hamburger button on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-section {
+  margin-top: 20px;
+}
+
+.dashboard-link {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dashboard-link:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .sidebar {
+    padding: 10px;
+    background-color: #fff; /* Changed background to white */
+    color: #333; /* Adjust text color for readability */
+  }
+
+  .sidebar ul li a {
+    color: #333; /* Adjust link colors to match the new background */
+  }
+
+  header {
+    padding: 5px 10px;
+  }
+
+  .dashboard-container {
+    padding: 10px; /* Reduced padding for smaller screens */
+    box-shadow: none; /* Remove shadow for a cleaner look */
+  }
+
+  .dashboard-link {
+    padding: 8px; /* Adjust padding for buttons */
+    font-size: 14px; /* Make font smaller */
+  }
+
+  /* Form and Table Styles */
+  .vehicle-form,
+  .employee-form,
+  .order-form,
+  .report-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .vehicle-form input,
+  .employee-form input,
+  .order-form input,
+  .report-form input,
+  .vehicle-form select,
+  .employee-form select,
+  .order-form select,
+  .report-form select,
+  .vehicle-form button,
+  .employee-form button,
+  .order-form button,
+  .report-form button {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px; /* Reduce input and button size */
+  }
+
+  .vehicle-table,
+  .employee-table,
+  .order-table,
+  .report-table {
+    font-size: 14px; /* Slightly smaller font on mobile */
+  }
+
+  .vehicle-table th,
+  .employee-table th,
+  .order-table th,
+  .report-table th,
+  .vehicle-table td,
+  .employee-table td,
+  .order-table td,
+  .report-table td {
+    padding: 8px; /* Adjust padding for mobile */
+  }
+
+  .form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container h2 {
+    margin-bottom: 20px;
+  }
+
+  .form-container input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .form-container button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .form-container button:hover {
+    background: #0056b3;
+  }
+}
